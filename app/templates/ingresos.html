@@ -1,0 +1,86 @@
+{%extends "main.html"%}
+{%block title%} Campo Limpio {%endblock%}
+{% load static %}
+{%block content%}
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col-5">
+      <h2>Nuevo Ingreso</h2>
+      <form action="/ingresos/nuevo_ingreso/" method="POST">{% csrf_token %}
+        <div class="mb-3">
+          <label for="envase" class="form-label">Envase</label>          
+          <select id="envase" class="form-control" name="envase">
+            {%for e in envases %}
+            <option value="{{e.id}}">
+              {{e.Categoría}}
+              {{e.Material}}
+              {{e.Capacidad}}
+              {{e.Unidad}}
+              ({{e.Tipo}})
+            </option>
+            {%endfor%}
+          </select>
+          <div class="form-text">Elija el envase.</div>
+        </div>
+        <div class="mb-3">
+          <label for="cant" class="form-label">Cantidad</label>
+          <input type="number" class="form-control" id="cant" name="cant">
+          <div class="form-text">Cantidad de envases de ese tipo y categoría que se dejarán.</div>
+        </div>
+        <div class="mb-3">
+          <label for="prod" class="form-label">Productor</label>          
+          <select id="prod" class="form-control" name="productor">
+            {%for p in productores %}
+            <option value="{{p.id}}">
+              {{p.Nombre}}
+              {{p.Apellido}}
+            </option>
+            {%endfor%}
+          </select>
+          <div class="form-text">Elija un productor.</div>
+        </div>
+        <div class="mb-3">
+          <label for="fecha" class="form-label">Fecha</label>
+          <input type="date" class="form-control" name="fecha" id="fecha">
+          <div class="form-text">Fecha de ingreso de los envases.</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar</button>
+      </form>
+      <br>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-6">
+      <br>
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Cod</th>
+              <th scope="col">Productor</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Envase</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Retiro</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for i in ingresos %}
+            {% if i.Retirado %}  
+            {% else %}
+            <tr>
+              <td>{{i.id}}</td>
+              <td>{{i.Productor}}</td>
+              <td class="text-end">{{i.Cantidad}}</td>
+              <td>{{i.Envase}}</td>
+              <td>{{i.Fecha}}</td>
+              <td><a href="../retirar/{{i.id}}" class="btn btn-success btn-sm">Retirar</a></td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+          </tbody>
+        </table>
+    </div>
+  </div>
+</div>
+</main>
+{%endblock%}

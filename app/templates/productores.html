@@ -1,0 +1,29 @@
+{%extends "main.html"%}
+{%block title%} Campo Limpio {%endblock%}
+{% load static %}
+{%block content%}
+<main>
+<h1>Productores</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Domicilio</th>
+        <th scope="col">Teléfono</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for data in productores %}
+      <tr>
+        <td>{{data.Nombre}}</td>
+        <td>{{data.Apellido}}</td>
+        <td>{{data.Domicilio}}</td>
+        <td>{{data.Telefono}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</main>
+{%endblock%}

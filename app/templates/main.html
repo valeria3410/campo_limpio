@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%} {%endblock%}</title>
+    <link rel="stylesheet" href='{% static "css/bootstrap/bootstrap.css"%}'>
+    <link rel="stylesheet" href='{% static "css/estilo_main.css"%}'>
+    <link rel="stylesheet" href='{% static "css/estilo_paginas.css"%}'>
+</head>
+<body>
+    <header>
+        <a class="logo" href='{%url "index"%}'>
+            <img class="logo" src= '{% static "img/logo.png"%}' alt="CAMPO LIMPIO" />
+        </a>
+        <nav>
+            <ul>
+                <li><a href="{%url 'ingresos'%}">Ingresos</a></li>
+                <li><a href="{%url 'retiros'%}">Retiros</a></li>
+            </ul>
+        </nav>
+    </header>
+    {%block content%}
+    {%endblock%}
+</body>
+</html>

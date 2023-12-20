@@ -1,0 +1,39 @@
+{%extends "main.html"%}
+{%block title%} Campo Limpio {%endblock%}
+{% load static %}
+{%block content%}
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+      <h2>Nuevo Ingreso</h2>
+      <br>
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Cod</th>
+              <th scope="col">Productor</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Envase</th>
+              <th scope="col">Fecha</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for r in retiros %}
+            {% if r.Retirado %}  
+            <tr>
+              <td>{{r.id}}</td>
+              <td>{{r.Productor}}</td>
+              <td class="text-end">{{r.Cantidad}}</td>
+              <td>{{r.Envase}}</td>
+              <td>{{r.Fecha}}</td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+          </tbody>
+        </table>
+    </div>
+  </div>
+</div>
+</main>
+{%endblock%}

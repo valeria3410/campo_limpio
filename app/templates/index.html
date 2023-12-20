@@ -1,0 +1,21 @@
+{%extends "main.html"%}
+{%block title%} Campo Limpio {%endblock%}
+{% load static %}
+{%block content%}
+<main style="background-image: url('{% static "img/campo.jpg" %}')">   
+
+  <div class="p-5 mb-4 bg-body-tertiary rounded-3 index">
+    <div class="container-fluid py-5">
+      <h1 class="display-9 fw-bold">Campo Limpio</h1>
+      <p class="col-md-12 fs-5">
+        Nuestra misión es diseñar e implementar un sistema de gestión ambiental para recuperar los envases vacíos de fitosanitarios del campo argentino, promoviendo la sustentabilidad y el cuidado del ambiente.
+      </p>
+      
+        <a href="{% url 'más información' %}" class="btn-success btn-lg btn align="rigth">Conocé más</a>
+
+    </div>
+  </div>
+
+
+</main>
+{%endblock%}

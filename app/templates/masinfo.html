@@ -1,0 +1,64 @@
+{%extends "main.html"%}
+{%block title%}Campo Limpio - Más información{%endblock%}
+{% load static %}
+{%block content%}
+
+
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Nuestra tarea ayuda al medio ambiente</h1>
+        <p class="lead text-body-secondary">El reciclaje y desecho responsable de envases de pesticidas y otros productos agrícolas es importante para proteger el medio ambiente y la salud humana.</p>
+        <p>  
+            <a href="{% url 'index' %}" class="btn-success btn-lg btn">Trabajá con nosotros</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+<section class="section pt-12 pb-12">
+    <div class="container">
+      <h2 class="text-center mb-6">Nosotros</h2>
+      <p class="lead text-center mb-6">Campo Limpio es una empresa especializada en el reciclaje y desecho responsable de envases de pesticidas y otros productos agrícolas. Ofrecemos servicios de recolección, transporte y tratamiento de residuos peligrosos.</p>
+      <br><br><br>
+      <div class="row">
+        <div class="col-lg-6 mb-6">
+          <h3 class="mb-4">Beneficios del reciclaje</h3>
+          <ul class="list-unstyled">
+            <li>Reduce la cantidad de residuos que van a los vertederos.</li>
+            Ahorra recursos naturales, como el petróleo y el agua.</li>
+            Ayuda a proteger el medio ambiente de los contaminantes.</li>
+          </ul>
+        </div>
+        <div class="col-lg-6 mb-6">
+          <h3 class="mb-4">Beneficios del desecho responsable</h3>
+          <ul class="list-unstyled">
+            <li>Evita la contaminación del suelo, el agua y el aire.</li>
+            Protege la salud humana y animal.</li>
+            Evita riesgos de incendio o explosión.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+        <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+              <div class="col-lg-6 col-md-8 mx-auto">
+                <a href="https://www.facebook.com/campolimpio" target="_blank">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/facebook.png" alt="Facebook" />
+                </a>
+
+                <a href="https://www.instagram.com/campolimpio" target="_blank">
+                      <img src="https://img.icons8.com/ios-filled/50/000000/instagram.png" alt="Instagram" />
+                </a>
+                  
+                <a href="https://wa.me/5493874567890" target="_blank">
+                      <img src="https://img.icons8.com/ios-filled/50/000000/whatsapp.png" alt="WhatsApp" />
+                </a>
+              </div>
+            </div>
+          </section>
+       
+
+{%endblock%}

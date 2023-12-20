@@ -1,0 +1,26 @@
+main{
+    padding: 150px 120px;
+    position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.index{
+    color: #454545;
+}
+
+
+
+a:link, a:visited, a:active {
+    text-decoration:none;
+    color: #ffffff;
+}
+
+#volver{
+    background-color: #47b972;
+    border: #454545;
+}
